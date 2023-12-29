@@ -14,10 +14,17 @@ let package = Package(
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
-        .target(
-            name: "libssh2-xcframework"),
-        .testTarget(
-            name: "libssh2-xcframeworkTests",
-            dependencies: ["libssh2-xcframework"]),
+        .binaryTarget(
+            name: "libssh2-xcframework",
+            path: "libssh2.xcframework"
+        ),
+        .binaryTarget(
+            name: "libssl-xcframework",
+            path: "libssl.xcframework"
+        ),
+        .binaryTarget(
+            name: "libcrypto-xcframework",
+            path: "libcrypto.xcframework"
+        ),
     ]
 )
